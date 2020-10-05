@@ -26,6 +26,9 @@ RUN npm install -y -g serverless
 RUN update-alternatives --remove python /usr/bin/python2
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 10
 
+RUN apt-get update
+RUN apt-get install -y libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
+
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 RUN unzip awscliv2.zip
 RUN ./aws/install

@@ -1,0 +1,70 @@
+service: ui-service
+frameworkVersion: ">=1.30.0"
+custom:
+  bucket: ${env:MY_BUCKET_NAME}
+  crawlerqueue: ${env:MY_CRAWLER_QUEUE}
+  region: ${env:AWS_DEFAULT_REGION, 'eu-west-1'}
+  accountid: ${env:AWS_ACCOUNT_ID}
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: ${env:AWS_DEFAULT_REGION, 'eu-west-1'}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:PutObject
+        - s3:GetObject
+        - s3:ListBucket
+        - s3:ListObjects
+        - s3:ListObjectsV2
+      Resource: "arn:aws:s3:::${self:custom.bucket}/*"
+    - Effect: Allow
+      Action:
+        - s3:ListBucket
+        - s3:ListObjects
+        - s3:ListObjectsV2
+      Resource: "arn:aws:s3:::${self:custom.bucket}"
+    - Effect: Allow
+      Action:
+        - sqs:SendMessage
+        - sqs:DeleteMessage
+        - sqs:GetQueueUrl
+      Resource: "arn:aws:sqs:*:*:${self:custom.crawlerqueue}"
+    - Effect: Allow
+      Action:
+        - sqs:ListQueues
+      Resource: "arn:aws:sqs:::*"
+
+functions:
+  analyzeUrl:
+    handler: handler.analyzeUrl
+    environment:
+      BUCKET: ${self:custom.bucket}
+      QUEUE: ${self:custom.crawlerqueue}
+      REGION: ${self:custom.region}
+      ACCOUNTID: ${self:custom.accountid}
+    events:
+      - http:
+          path: url/analyze
+          method: post
+          cors: true
+  listUrls:
+    handler: handler.listUrls
+    environment:
+      BUCKET: ${self:custom.bucket}
+    events:
+      - http:
+          path: url/list
+          method: get
+          cors: true
+  listImages:
+    handler: handler.listImages
+    environment:
+      BUCKET: ${self:custom.bucket}
+    events:
+      - http:
+          path: image/list
+          method: get
+          cors: true
+

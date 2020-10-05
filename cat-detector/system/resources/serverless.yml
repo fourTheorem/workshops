@@ -1,0 +1,26 @@
+service: resources
+frameworkVersion: ">=1.30.0"
+custom:
+  bucket: ${env:MY_BUCKET_NAME}
+  crawlerqueue: ${env:MY_CRAWLER_QUEUE}
+  analysisqueue: ${env:MY_ANALYSIS_QUEUE}
+  region: ${env:AWS_DEFAULT_REGION, 'eu-west-1'}
+  accountid: ${env:AWS_ACCOUNT_ID}
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+  region: ${env:AWS_DEFAULT_REGION, 'eu-west-1'}
+
+resources:
+  Resources:
+    CrawlerQueue:
+      Type: "AWS::SQS::Queue"
+      Properties:
+        QueueName: "${self:custom.crawlerqueue}"
+    AnalysisQueue:
+      Type: "AWS::SQS::Queue"
+      Properties:
+        QueueName: "${self:custom.analysisqueue}"
+

@@ -1,0 +1,56 @@
+service: analysis-service
+frameworkVersion: ">=1.30.0"
+custom:
+  bucket: ${env:MY_BUCKET_NAME}
+  analysisqueue: ${env:MY_ANALYSIS_QUEUE}
+  region: ${env:AWS_DEFAULT_REGION, 'eu-west-1'}
+  accountid: ${env:AWS_ACCOUNT_ID}
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: ${env:AWS_DEFAULT_REGION, 'eu-west-1'}
+  memorySize: 512
+  timeout: 10
+  stage: dev
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - s3:PutObject
+        - s3:GetObject
+        - s3:ListBucket
+        - s3:ListObjects
+        - s3:ListObjectsV2
+      Resource: "arn:aws:s3:::${self:custom.bucket}/*"
+    - Effect: Allow
+      Action:
+        - s3:ListBucket
+        - s3:ListObjects
+        - s3:ListObjectsV2
+      Resource: "arn:aws:s3:::${self:custom.bucket}"
+    - Effect: "Allow"
+      Action:
+        - "rekognition:*"
+      Resource: "*"
+    - Effect: Allow
+      Action:
+        - sqs:ListQueues
+      Resource: "arn:aws:sqs:${self:provider.region}::*"
+    - Effect: Allow
+      Action:
+        - sqs:ReceiveMessage
+        - sqs:DeleteMessage
+        - sqs:GetQueueUrl
+      Resource: "arn:aws:sqs:*:*:${self:custom.analysisqueue}"
+
+functions:
+  analyzeImages:
+    handler: handler.analyzeImages
+    environment:
+      BUCKET: ${self:custom.bucket}
+      REGION: ${self:custom.region}
+      ACCOUNTID: ${self:custom.accountid}
+    events:
+      - sqs:
+          arn: "arn:aws:sqs:${self:provider.region}:${env:AWS_ACCOUNT_ID}:${self:custom.analysisqueue}"
+

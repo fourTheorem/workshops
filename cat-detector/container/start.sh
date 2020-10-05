@@ -1,6 +1,6 @@
 #!/bin/bash
 set -o vi
-cd /home/dev/work/sessions
+cd /home/dev/work
 npm install
 cd /home/dev
 source .env/bin/activate

@@ -29,3 +29,4 @@ old_todo.txt
 .env
 *.pdf
 docker-compose.yml
+.ipynb_checkpoints
