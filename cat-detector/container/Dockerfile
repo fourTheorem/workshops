@@ -37,7 +37,7 @@ COPY requirements.txt /home/dev
 RUN python -m venv .env
 RUN source /home/dev/.env/bin/activate && pip install -r requirements.txt
 
-RUN npm install -g --unsafe-perm ijavascript
+RUN npm install -y -g --unsafe-perm ijavascript
 RUN source /home/dev/.env/bin/activate && ijsinstall --install=global
 COPY ./start.sh /home/dev
 RUN chmod 755 /home/dev/start.sh

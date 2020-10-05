@@ -9,6 +9,12 @@ For your convienience we have created a docker container that is configured with
 
 If you are already comfortable with using these tools on your development machine then you don't necessicarily need the container however we recommend that you use it in order to have the same working environment.
 
+The image below shows how we will work with this container:
+
+![Docker](./images/Docker.png "Development Container")
+
+We will use the command line to connect to the container. This will allow us to deploy our cat detector system using the tools installed into the container. The container will also serve up Jupyter notebooks that will allow us to run interactive tests against the AWS API and the deployed system.
+
 ## Setup Docker
 If you don't already have docker installed then you will need to set it up. Platform specific instructions can be found here:
 [https://docs.docker.com/get-docker]( https://docs.docker.com/get-docker)
@@ -17,18 +23,18 @@ If you don't already have docker installed then you will need to set it up. Plat
 We have published the container to docker hub, the quickest way to get the container is to run:
 
 ```sh
-$ docker pull fourtheorem/aiworkshop
+$ docker pull pelger/aiasaservice
 ```
 
-Alternatively, the container can be built from source as follows:
+This will fetch the container from Docker Hub. Alternatively, the container can be built from source as follows:
 
 ```sh
 $ cd container
-$ docker build -t fourtheorem/aiworkshop .
+$ docker build -t aiasaservice .
 ```
 
 ## Configure the Container
-Once you have the container you will need to configure it. We have provided a Docker Comppose template file in the `container` directory in this repository. To configure the container `cd` into this directory and copy the file `docker-compose-template.yml` to `docker-compose.yml`. Open the file `docker-compose.yml` in a text editor and change the following lines:
+Once you have the container you will need to configure it. We have provided a Docker Compose template file in the `container` directory in this repository. To configure the container `cd` into this directory and copy the file `docker-compose-template.yml` to `docker-compose.yml`. Open the file `docker-compose.yml` in a text editor and change the following lines:
 
 ```yaml
 environment:
@@ -58,6 +64,13 @@ $ cd container
 $ bash ./run.sh
 ```
 
+On windows:
+
+```cmd
+c:> cd container
+c:> run.cmd
+```
+
 This will run the container and give you a command prompt inside the container. You should see output similar to the following:
 
 ```sh
@@ -85,24 +98,5 @@ Next copy and paste the url to the notebook from the container output into a bro
 http://127.0.0.1:8888/?token=4bf8586b7a2b357b0cca12b9586360bfb5fb77bec99fb88b
 ```
 
-Naviagte to the `step2-setup` directory and open the notebook `step2.ipynb`. This notebook contains the rest of the setup code so you should work through this to create a bucket for the workshop and also to upload some test images.
-
-## Exit and stop the container
-If you need to exit or stop the container at any time, simply type `exit` at the command prompt in the container:
-
-```sh
-# exit
-```
-
-This will leave the container running in the background to reconnect run:
-
-```sh
-$ docker exec -ti $(docker ps -a -q) /bin/bash
-```
-
-To stop all running container execute:
-
-```sh
-$ docker kill $(docker ps -a -q)
-```
+Naviagte to the `step2-setup` directory and open the notebook `step2.ipynb`. Follow the instructions here to check your setup.
 
