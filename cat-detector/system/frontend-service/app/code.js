@@ -2,12 +2,11 @@
 'use strict'
 
 // const BUCKET_ROOT = '<YOUR BUCKET URL>' // of the form https://s3-eu-west-1.amazonaws.com/<YOUR BUCKET NAME>
-// const API_ROOT = 'https://chapter2api.<YOUR CUSTOM DOMAIN>/api/'
-// const BUCKET_ROOT = 'https://s3-eu-west-1.amazonaws.com/peterbooktestingfeb2020'
-// const API_ROOT = 'https://chapter2api.aiasaservice.info/api/'
+// const API_ROOT = 'https://<YOUR API GW ID>.execute-api.eu-west-1.amazonaws.com/api/'
+// browse to 'https://<YOUR BUCKET NAME>.s3.amazonaws.com/index.html'
+const BUCKET_ROOT = 'https://s3-eu-west-1.amazonaws.com/elgerfourtheoremoctober122020'
+const API_ROOT = 'https://tkv7wa9hj4.execute-api.eu-west-1.amazonaws.com/dev/'
 
-const BUCKET_ROOT = 'https://s3-eu-west-1.amazonaws.com/aiasaservicetrainingjune2020'
-const API_ROOT = 'https://1bcd4xqew7.execute-api.eu-west-1.amazonaws.com/api/'
 
 function displayableUrl (url) {
   let disp = url

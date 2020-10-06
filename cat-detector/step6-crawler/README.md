@@ -1,5 +1,5 @@
 # Cat Detector Step 6 - Crawler
-The crawler service is responsible for fetching images from a from a URL. The URL in question is supplied via the crawler SQS queue that was deployed in the last step.
+The crawler service is responsible for fetching images from a from a given URL. The URL in question is supplied via the crawler SQS queue that was deployed in the last step.
 
 The code for the crawler is in the `system/crawler-service` directory in this repository. Let's take a quick look at it. The `serverless.yml` file is as follows:
 
@@ -53,10 +53,10 @@ functions:
           arn: "arn:aws:sqs:${self:provider.region}:${env:AWS_ACCOUNT_ID}:${self:custom.crawlerqueue}"
 ```
 
-This is a little more involved that the previous step. Briefly each section does the following:
+This is a little more involved that the previous deployment. Briefly each section does the following:
 
 * custom - Imports environment variables.
-* provider - Defines the cloud as `aws` and the runtime as `node12.x`. We then define some IAM roles and pemissions:
+* provider - Defines the cloud as `aws` and the runtime as `node12.x`. We then define some IAM roles and permissions:
   * allow PutObject permissions to our bucket
   * allow SQS ListQueues
   * allow SQS ReceiveMessage, DeleteMessage and GetQueueUrl for the crawler queue
@@ -117,9 +117,9 @@ $ npm install
 $ serverless deploy
 ```
 
-The `npm install` command installed the required dependencies for our function such as the AWS SDK. These are deinfed in the file `package.json`.
+The `npm install` command installed the required dependencies for our function such as the AWS SDK. These are defined in the file `package.json`.
 
-After a few seconds the serverless framework should report that the lamda function was successfully deployed. If you now take a look at the CloudFormation console on AWS you should see that a second stack has been deployed. Also go ahead and open the Lambda console to view the function that we just deployed.
+After a few seconds the serverless framework should report that the lambda function was successfully deployed. If you now take a look at the CloudFormation console on AWS you should see that a second stack has been deployed. Also go ahead and open the Lambda console to view the function that we just deployed.
 
 Before we proceed we should test that our service is operating correctly. Point your browser to the Jupyter server running in your container and open the notebook `step6-crawler/step6.ipynb`.
 

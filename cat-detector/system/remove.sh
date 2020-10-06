@@ -13,6 +13,5 @@ function remove () {
   done
 }
 
-# aws s3 rm s3://${MY_BUCKET_NAME} --recursive
 remove
 

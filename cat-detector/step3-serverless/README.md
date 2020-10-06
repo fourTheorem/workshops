@@ -1,11 +1,11 @@
 # Cat Detector Step 3 - Serverless
 In this workshop we will be using the serverless framework to deploy our system. In this step we will take a quick look under the hood.
 
-Firstly we should note that there are a growing number of tools to help manage serverless infrastrucutre as code. These include:
+Firstly we should note that there are a growing number of tools to help manage serverless infrastructure as code (IaC). These include:
 
 * AWS SAM
 * AWS Amplify
-* Hasicorp Terraform
+* Hasicorp's Terraform
 * AWS Cloud Development Kit (CDK)
 
 All of these are very capable tools, and generally under the hood they use AWS Cloud Formation as the main deployment engine.
@@ -41,7 +41,7 @@ functions:
           method: get
 ```
 
-This configuration is comprised of three sections defines a single lambda function that will be accessed by a http get request. The provider section defines the cloud as AWS and the runtime as node 12.x.
+This configuration is comprised of three sections and defines a single lambda function that will be accessed by a http get request. The provider section defines the cloud as AWS and the runtime as node 12.x.
 
 A minimal example handler function is shown in the listing below:
 

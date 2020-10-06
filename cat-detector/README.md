@@ -24,5 +24,14 @@ The steps are:
 * [step9-full](./step9-full/README.md)
 * [step10-wrapup](./step10-wrapup/README.md)
 
-There will also be some code to depoy, run and test along the way so grab some coffee, roll up your sleves and lets get started with [step1](./step1-overview/README.md)
+There will also be some code to deploy, run and test along the way so grab some coffee, roll up your sleeves and lets get started with [step1](./step1-overview/README.md)
+
+## Get in touch
+This workshop is brought to you by fourTheorem [https://www.fourtheorem.com](https://www.fourtheorem.com).
+
+You can reach us at: `hello at fourtheorem dot com`
+
+Tweet/DM us at: @pelger, @eoinsha
+
+Linkedin: [https://www.linkedin.com/in/peterelger/](https://www.linkedin.com/in/peterelger/)
 

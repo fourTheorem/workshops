@@ -1,8 +1,8 @@
 # Chapter 2
-This folder containes the code for Chapter2.
+This folder contains the code for Chapter2.
 
 ## Deploy and remove
-If your AWS account is setup and and you have configured the following environment variables in your shell:
+If your AWS account is setup and you have configured the following environment variables in your shell:
 
 ```sh
 AWS_ACCOUNT_ID
@@ -19,7 +19,7 @@ Then the system can be deployed using:
 $ bash ./deploy.sh
 ```
 
-The system can be reomved using:
+The system can be removed using:
 
 ```
 $ bash ./remove.sh

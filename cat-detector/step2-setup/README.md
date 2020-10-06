@@ -1,5 +1,5 @@
 # Cat Detector Step 2 - Setup
-For your convienience we have created a docker container that is configured with all of the required sotware tools for the workshop. The `Dockerfile` for the container can be found in the `/container` directory in this repository. The container has the following installed:
+For your convenience we have created a docker container that is configured with all of the required software tools for the workshop. The `Dockerfile` for the container can be found in the `/container` directory in this repository. The container has the following installed:
 
 * python 3.7
 * Jupyter Labs server
@@ -7,7 +7,7 @@ For your convienience we have created a docker container that is configured with
 * node.js
 * serverless framework
 
-If you are already comfortable with using these tools on your development machine then you don't necessicarily need the container however we recommend that you use it in order to have the same working environment.
+If you are already comfortable with using these tools on your development machine then you don't necessarily need the container however we recommend that you use it in order to have the same working environment.
 
 The image below shows how we will work with this container:
 
@@ -54,7 +54,7 @@ Use your specific AWS credentials to configure the file. For the bucket name you
 <your last name><your company name><todays date>
 ```
 
-For example: `elgerfourtheoremseptember122020`
+For example: `elgerfourtheoremoctober122020`
 
 ## Run the Container
 We have provided a run script for the container. To start the container:
@@ -98,5 +98,5 @@ Next copy and paste the url to the notebook from the container output into a bro
 http://127.0.0.1:8888/?token=4bf8586b7a2b357b0cca12b9586360bfb5fb77bec99fb88b
 ```
 
-Naviagte to the `step2-setup` directory and open the notebook `step2.ipynb`. Follow the instructions here to check your setup.
+Navigate to the `step2-setup` directory and open the notebook `step2.ipynb`. Follow the instructions here to check your setup.
 
