@@ -13,18 +13,18 @@ The workshop is divided into 10 easy to follow stages so that you can work along
 
 The steps are:
 
-* [step1-overview](./step1-overview/README.md)
-* [step2-setup](./step2-setup/README.md)
-* [step3-serverless](./step3-serverless/README.md)
-* [step4-infrastructure](./step4-infrastructure/README.md)
-* [step5-rekognition](./step5-rekognition/README.md)
-* [step6-crawler](./step6-crawler/README.md)
-* [step7-analysis](./step7-analysis/README.md)
-* [step8-ui](./step8-ui/README.md)
-* [step9-full](./step9-full/README.md)
-* [step10-wrapup](./step10-wrapup/README.md)
+* [step1-overview](./step1-overview)
+* [step2-setup](./step2-setup)
+* [step3-serverless](./step3-serverless)
+* [step4-infrastructure](./step4-infrastructure)
+* [step5-rekognition](./step5-rekognition)
+* [step6-crawler](./step6-crawler)
+* [step7-analysis](./step7-analysis)
+* [step8-ui](./step8-ui)
+* [step9-full](./step9-full)
+* [step10-wrapup](./step10-wrapup)
 
-There will also be some code to deploy, run and test along the way so grab some coffee, roll up your sleeves and lets get started with [step1](./step1-overview/README.md)
+There will also be some code to deploy, run and test along the way so grab some coffee, roll up your sleeves and lets get started with [step1](./step1-overview)
 
 ## Get in touch
 This workshop is brought to you by fourTheorem [https://www.fourtheorem.com](https://www.fourtheorem.com).

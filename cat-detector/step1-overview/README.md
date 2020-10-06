@@ -5,22 +5,22 @@ In this workshop we are going to deploy our serverless cat detection system (act
 This workshop is divided into the following sections.
 
 ### Section 1 - Overview and Setup
-* [step1-overview](../step1-overview/README.md) - this explanation
-* [step2-setup](../step2-setup/README.md) - ensure that you have the correct tooling ready to go
+* [step1-overview](../step1-overview) - this explanation
+* [step2-setup](../step2-setup) - ensure that you have the correct tooling ready to go
 
 ### Section 2 - Serverless Framework, Infrastructure and AWS Rekogntion
-* [step3-serverless](../step3-serverless/README.md) - overview of the serverless framework and other tooling
-* [step4-infrastructure](../step4-infrastructure/README.md) - deploy shared infrastructure
-* [step5-rekognition](../step5-rekognition/README.md) - an investigation of the capabilities of AWS Rekognition
+* [step3-serverless](../step3-serverless) - overview of the serverless framework and other tooling
+* [step4-infrastructure](../step4-infrastructure) - deploy shared infrastructure
+* [step5-rekognition](../step5-rekognition) - an investigation of the capabilities of AWS Rekognition
 
 ###  Section 3 - Asynchronous Services
-* [step6-crawler](../step6-crawler/README.md) - deploy and test the crawler service
-* [step7-analysis](../step7-analysis/README.md) - deploy and test the analysis service
+* [step6-crawler](../step6-crawler) - deploy and test the crawler service
+* [step7-analysis](../step7-analysis) - deploy and test the analysis service
 
 ###  Section 4 - UI Deploy and test. Wrap up
-* [step8-ui](../step8-ui/README.md) - deploy UI service
-* [step9-full](../step9-full/README.md) - deploy the front end and test the system
-* [step10-wrapup](../step10-wrapup/README.md) - wrap up and remove deployed resources
+* [step8-ui](../step8-ui) - deploy UI service
+* [step9-full](../step9-full) - deploy the front end and test the system
+* [step10-wrapup](../step10-wrapup) - wrap up and remove deployed resources
 
 ## Finished System UI
 It's good to have a goal to aim for! The UI for our finished system looks like the following:
