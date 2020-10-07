@@ -21,7 +21,6 @@ dist
 .sass-cache
 options.mine.js
 db/
-data/
 .DS_Store
 todo.txt
 old_todo.txt
