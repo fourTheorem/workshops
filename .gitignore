@@ -31,3 +31,4 @@ old_todo.txt
 docker-compose.yml
 .ipynb_checkpoints
 ref
+run.env
