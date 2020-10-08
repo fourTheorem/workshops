@@ -8,7 +8,7 @@ Firstly we should note that there are a growing number of tools to help manage s
 * Hasicorp's Terraform
 * AWS Cloud Development Kit (CDK)
 
-All of these are very capable tools, and generally under the hood they use AWS Cloud Formation as the main deployment engine.
+All of these are very capable tools, and generally under the hood they use AWS CloudFormation as the main deployment engine.
 
 Whilst it is possible to use Cloud Formation directly with JSON or YAML templates, things do tend to be a bit verbose which is why it makes sense to use a higher level tool to control your deployments. 
 
@@ -61,3 +61,6 @@ module.exports.hello = async event => {
 This simply responds to a http `GET` request with the string `Hello!`.
 
 Don't worry if you're new to Serverless, by the end of this workshop you will have deployed a fully working system. Let's move onto step 4 and deploy our first piece of infrastructure.
+
+Next step: [step4-infrastructure](../step4-infrastructure)
+

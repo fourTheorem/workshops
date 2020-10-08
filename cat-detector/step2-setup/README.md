@@ -13,7 +13,7 @@ The image below shows how we will work with this container:
 
 ![Docker](./images/Docker.png "Development Container")
 
-We will use the command line to connect to the container. This will allow us to deploy our cat detector system using the tools installed into the container. The container will also serve up Jupyter notebooks that will allow us to run interactive tests against the AWS API and the deployed system.
+We will use the command line to connect to the container. This will allow us to deploy our cat detector system using the tools installed in the container. The container will also serve up Jupyter notebooks that will allow us to run interactive tests against the AWS API and the deployed system.
 
 ## Setup Docker
 If you don't already have docker installed then you will need to set it up. Platform specific instructions can be found here:
@@ -33,19 +33,22 @@ $ cd container
 $ docker build -t aiasaservice .
 ```
 
+It is usually quicker to pull the container than to build it!
+
 ## Configure the Container
-Once you have the container you will need to configure it. We have provided a Docker Compose template file in the `container` directory in this repository. To configure the container `cd` into this directory and copy the file `docker-compose-template.yml` to `docker-compose.yml`. Open the file `docker-compose.yml` in a text editor and change the following lines:
+Once you have the container you will need to configure it. We have provided a template environment file in the `container` directory in this repository. To configure the container `cd` into this directory and copy the file `run.env.template` to `run.env`. Open the file `run.env` in a text editor and change the following lines:
+
+PLEASE ENSURE THAT YOU DON'T PUT IN ANY SPACES EITHER SIDE OF THE EQUALS SIGN!!
 
 ```yaml
-environment:
-  AWS_ACCESS_KEY_ID: <your access key id>           <-- your AWS access key
-  AWS_SECRET_ACCESS_KEY: <your secret access key>   <-- your secret access key
-  AWS_DEFAULT_REGION: eu-west-1
-  AWS_REGION: eu-west-1
-  AWS_ACCOUNT_ID: <your account id>                 <-- your AWS account id
-  MY_CRAWLER_QUEUE: MyCrawlerQueue
-  MY_ANALYSIS_QUEUE: MyAnalysisQueue
-  MY_BUCKET_NAME: <your bucket name>                <-- your bucket name
+AWS_ACCESS_KEY_ID=<your access key id>           <-- your AWS access key
+AWS_SECRET_ACCESS_KEY=<your secret access key>   <-- your secret access key
+AWS_DEFAULT_REGION=eu-west-1
+AWS_REGION=eu-west-1
+AWS_ACCOUNT_ID=<your account id>                 <-- your AWS account id
+MY_CRAWLER_QUEUE=MyCrawlerQueue
+MY_ANALYSIS_QUEUE=MyAnalysisQueue
+MY_BUCKET_NAME=<your bucket name>                <-- your bucket name
 ```
 
 Use your specific AWS credentials to configure the file. For the bucket name you will need to pick a globally unique name to avoid a collision. We suggest something like:
@@ -61,7 +64,7 @@ We have provided a run script for the container. To start the container:
 
 ```sh
 $ cd container
-$ bash ./run.sh
+$ ./run.sh
 ```
 
 On windows:
@@ -74,6 +77,13 @@ c:> run.cmd
 This will run the container and give you a command prompt inside the container. You should see output similar to the following:
 
 ```sh
+.
+*******************************************************************************************
+Bucket name elgerfourtheoremoctober122020 is available, You're good to go!
+*******************************************************************************************
+.
+.
+.
 To access the notebook, open this file in a browser:
 			file:///root/.local/share/jupyter/runtime/nbserver-28-open.html
 	Or copy and paste one of these URLs:
@@ -82,6 +92,32 @@ To access the notebook, open this file in a browser:
 
 root@fa153e27d046:/home/dev#
 ```
+
+## Bucket message
+You should see a message similar to the above informing you that the bucket name you chose is available. If so you can skip this bit! However if you get an error message such as:
+
+```sh
+*******************************************************************************************
+Bucket name wibblefish is already taken, you will need to choose another bucket name :(
+*******************************************************************************************
+```
+
+You will need to pick another bucket name. To make this easy we have provided a script in the container called `checkbucket.sh` you can use it as follows:
+
+```sh
+# cd /home/dev
+# ./checkbucket <YOUR BUCKET NAME>
+```
+
+Keep trying bucket names until you find one that is available. Once you do you will need to re-configure and restart the container. To exit the container and remove it run:
+
+```sh
+# exit
+$ docker kill workshop
+$ docker rm workshop
+```
+
+Next edit the file `run.env` to supply your new bucket name and start the container again as described above.
 
 ## Confirm the container is configured correctly
 To confirm that your container is correctly configured run the following from the command prompt
@@ -99,4 +135,6 @@ http://127.0.0.1:8888/?token=4bf8586b7a2b357b0cca12b9586360bfb5fb77bec99fb88b
 ```
 
 Navigate to the `step2-setup` directory and open the notebook `step2.ipynb`. Follow the instructions here to check your setup.
+
+Next step: [step3-serverless](../step3-serverless)
 

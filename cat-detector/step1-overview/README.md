@@ -43,3 +43,6 @@ Briefly, the system works as follows:
 * The Analysis function is responsible for running the image recognition tasks using AWS Rekognition
 
 The code for the cat detector is in the `system` directory in this repository.
+
+Next step: [step2-setup](../step2-setup)
+

@@ -27,3 +27,5 @@ You should now be able to point a browser to `https://<YOUR BUCKET NAME>.s3.amaz
 
 Test out the system by running a search. For example search for Giraffe on Google, click the image results tab and copy the URL into the text box at the top of the applications page and click analyze. Refresh the page and you should see a new results page link.
 
+Next step: [step10-wrapup](../step10-wrapup)
+

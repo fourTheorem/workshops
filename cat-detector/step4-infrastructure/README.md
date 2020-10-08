@@ -98,10 +98,10 @@ If you look at the top of this configuration file you will see that the environm
 
 Let's deploy this infrastructure!
 
-Go to the container prompt that we opened earlier or, if you closed the container connection run the following command to reconnect.
+Go to the container prompt that we opened earlier or, if you exited the container prompt run the following command to reconnect.
 
 ```sh
-$ docker exec -ti $(docker ps -a -q) /bin/bash
+$ docker exec -ti workshop  /bin/bash
 ```
 
 Once at the command prompt, `cd` into the `work/system/resources` directory and run the following command:
@@ -119,20 +119,13 @@ After a few seconds the serverless framework should report that the deployment c
    An error occurred: WebAppS3Bucket - mybucket already exists.
 ```
 
-If you need to do this you should exit and stop the container as follows:
+If you need to do this you should go back to step 2 and follow the instructions there on how to choose a unique bucket name.
 
-```sh
-# exit
-$ docker-compose down
-```
-
-Ensure that you are in the `container` directory when you run the `docker-compose down` command. Once the container has exited, update your `docker-compose.yml` with a new bucket name and try again.
-
-Once the deployment has run successfully, check the resources in the AWS console.
-
-Firstly go to the cloud formation console. You should see a stack named `resources-dev`. This is the cloud formation stack that we just deployed. Next go to the SQS console. You should see two queues named `MyAnalysisQueue` and `MyCrawlerQueue`.
+Once the deployment has completed, go to the cloud formation web console. You should see a stack named `resources-dev`. This is the cloud formation stack that we just deployed. Next go to the SQS console. You should see two queues named `MyAnalysisQueue` and `MyCrawlerQueue`.
 
 Finally go to the S3 console and check that your bucket was created OK.
 
 Congratulations! You have just deployed some shared infrastructure. In the next step we will take a look at the Rekogntion API.
+
+Next step: [step5-rekognition](../step5-rekognition)
 

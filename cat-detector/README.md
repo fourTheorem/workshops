@@ -1,12 +1,19 @@
 # Welcome to the Cat Detector Workshop!
 In this workshop we will build a serverless image recognition system on AWS. The system will use a number of AWS technologies including S3, Lambda, SQS and Amazons image recognition AI service Rekognition.
 
+The finished system UI is shown below:
+
+![UI](./step1-overview/cats.png "System UI")
+
 ## Prerequsities
 For this workshop you will need:
 
 * A development machine with Docker installed [https://docs.docker.com/get-docker]( https://docs.docker.com/get-docker)
 * An AWS account
 * AWS API access keys: AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
+
+## Time to complete
+If you have all of the prerequisites ready to go then this workshop normally takes around 2 hours to complete. But it's not a race!
 
 ## Structure
 The workshop is divided into 10 easy to follow stages so that you can work along as we build the system.

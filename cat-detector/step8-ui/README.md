@@ -109,3 +109,5 @@ endpoints:
 Let's quickly test the UI service. You will need to copy and paste these URLs into the notebook to test the API.
 Point your browser to the Jupyter server running in your container and open the notebook `step8-analysis/step8.ipynb`.
 
+Next step: [step9-full](../step9-full)
+

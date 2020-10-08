@@ -39,6 +39,14 @@ RUN source /home/dev/.env/bin/activate && pip install -r requirements.txt
 
 RUN npm install -y -g --unsafe-perm ijavascript
 RUN source /home/dev/.env/bin/activate && ijsinstall --install=global
+
+COPY package.json /home/dev
+COPY support.js /home/dev
+RUN cd /home/dev && npm install
+
+COPY checkbucket.sh /home/dev
+RUN chmod +x /home/dev/checkbucket.sh
+
 COPY ./start.sh /home/dev
 RUN chmod 755 /home/dev/start.sh
 

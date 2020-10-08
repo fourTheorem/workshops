@@ -20,7 +20,12 @@ To run the remove script go to the command prompt in your container and run the 
 
 This will remove all of the lambda functions and SQS queues, however you will need to remove the S3 bucket yourself manually using the S3 console. You should also confirm that all resources from this workshop have indeed been removed by checking in the AWS console.
 
-Finally you can stop the container by running `docker-compose down` from the `container` directory.
+Finally you can stop the container by running:
+
+```sh
+$ docker kill workshop
+$ docker rm workshop
+```
 
 We covered a lot of ground and you may have some outstanding questions. Please feel free to contact us if you'd like to have a longer chat about any thing that wasn't clear.
 

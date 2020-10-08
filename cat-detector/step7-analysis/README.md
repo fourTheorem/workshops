@@ -26,3 +26,5 @@ After a few seconds the serverless framework should report that the lambda funct
 
 Before we proceed we should test that our service is operating correctly. Point your browser to the Jupyter server running in your container and open the notebook `step7-analysis/step7.ipynb`.
 
+Next step: [step8-ui](../step8-ui)
+
