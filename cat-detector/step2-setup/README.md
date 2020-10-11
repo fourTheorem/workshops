@@ -100,31 +100,7 @@ To access the notebook, open this file in a browser:
 root@fa153e27d046:/home/dev#
 ```
 
-## Bucket message
-You should see a message similar to the above informing you that the bucket name you chose is available. If so you can skip this bit! However if you get an error message such as:
-
-```sh
-*******************************************************************************************
-Bucket name wibblefish is already taken, you will need to choose another bucket name :(
-*******************************************************************************************
-```
-
-You will need to pick another bucket name. To make this easy we have provided a script in the container called `checkbucket.sh` you can use it as follows:
-
-```sh
-# cd /home/dev
-# ./checkbucket <YOUR BUCKET NAME>
-```
-
-Keep trying bucket names until you find one that is available. Once you do you will need to re-configure and restart the container. To exit the container and remove it run:
-
-```sh
-# exit
-$ docker kill workshop
-$ docker rm workshop
-```
-
-Next edit the file `run.env` to supply your new bucket name and start the container again as described above.
+If you see an error message that the bucket name is already taken then you should scroll to the end of this page and follow the instructions in the section 'What to do if you get a bucket error message'.
 
 ## Confirm the container is configured correctly
 To confirm that your container is correctly configured run the following from the command prompt
@@ -144,4 +120,33 @@ http://127.0.0.1:8888/?token=4bf8586b7a2b357b0cca12b9586360bfb5fb77bec99fb88b
 Navigate to the `step2-setup` directory and open the notebook `step2.ipynb`. Follow the instructions here to check your setup.
 
 Next step: [step3-serverless](../step3-serverless)
+
+
+----
+
+## What to do if you get a bucket error message
+If on starting the container you see an error message similar to the below:
+
+```sh
+*******************************************************************************************
+Bucket name wibblefish is already taken, you will need to choose another bucket name :(
+*******************************************************************************************
+```
+
+This means that the bucket name that you chose for this workshop is already taken. You will need to pick another bucket name. To make this easy we have provided a script in the container called `checkbucket.sh` you can use it as follows:
+
+```sh
+# cd /home/dev
+# ./checkbucket <YOUR BUCKET NAME>
+```
+
+Keep trying bucket names until you find one that is available. Once you do you will need to re-configure and restart the container. To exit the container and remove it run:
+
+```sh
+# exit
+$ docker kill workshop
+$ docker rm workshop
+```
+
+Next edit the file `run.env` to supply your new bucket name and start the container again as described above.
 
