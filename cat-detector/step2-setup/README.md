@@ -15,6 +15,13 @@ The image below shows how we will work with this container:
 
 We will use the command line to connect to the container. This will allow us to deploy our cat detector system using the tools installed in the container. The container will also serve up Jupyter notebooks that will allow us to run interactive tests against the AWS API and the deployed system.
 
+## Clone this repository
+You should clone this repository locally using the following command
+
+```sh
+git clone git@github.com:fourTheorem/workshops.git
+```
+
 ## Setup Docker
 If you don't already have docker installed then you will need to set it up. Platform specific instructions can be found here:
 [https://docs.docker.com/get-docker]( https://docs.docker.com/get-docker)
