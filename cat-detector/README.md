@@ -1,7 +1,5 @@
 # TL;DR
-For the impatient, quick setup instructions can be found here:
-
-![Quick Setup](https://github.com/fourTheorem/workshops/blob/master/cat-detector/quick-setup.md)
+For the impatient, quick setup instructions can be found in `quick-setup.md` in this directory.
 
 # Welcome to the Cat Detector Workshop!
 In this workshop we will build a serverless image recognition system on AWS. The system will use a number of AWS technologies including S3, Lambda, SQS and Amazons image recognition AI service Rekognition.
