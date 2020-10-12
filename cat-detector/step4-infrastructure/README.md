@@ -101,14 +101,14 @@ Let's deploy this infrastructure!
 Go to the container prompt that we opened earlier or, if you exited the container prompt run the following command to reconnect.
 
 ```sh
-$ docker exec -ti workshop  /bin/bash
+docker exec -ti workshop  /bin/bash
 ```
 
 Once at the command prompt, `cd` into the `work/system/resources` directory and run the following command:
 
 ```sh
-$ cd work/system/resources
-$ serverless deploy
+cd work/system/resources
+serverless deploy
 ```
 
 After a few seconds the serverless framework should report that the deployment completed. However, if you see output similar to that below, it means that the buket name that you chose is not unique and you will need to select another.

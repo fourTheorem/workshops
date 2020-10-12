@@ -17,9 +17,9 @@ The main entry point is `analyzeImages`. This unpacks the SQS message and looks 
 Let's go ahead and deploy the Analysis Service. Go to the shell prompt in your container and run:
 
 ```sh
-$ cd work/system/analysis-service
-$ npm install
-$ serverless deploy
+cd work/system/analysis-service
+npm install
+serverless deploy
 ```
 
 After a few seconds the serverless framework should report that the lambda function was successfully deployed. If you now take a look at the CloudFormation console on AWS you should see that a third stack has been deployed. Also go ahead and open the Lambda console to view the function that we just deployed.

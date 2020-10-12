@@ -17,8 +17,8 @@ Edit these lines to reflect your specific bucket name and API gateway. Save the 
 To deploy the frontend, go to the command prompt on your container and run the following:
 
 ```sh
-# cd work/system/frontend-service
-# aws s3 sync app/ s3://$MY_BUCKET_NAME
+cd work/system/frontend-service
+aws s3 sync app/ s3://$MY_BUCKET_NAME
 ```
 
 This will copy the files for the front end to your public facing bucket. 

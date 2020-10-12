@@ -92,9 +92,9 @@ Note that we have not taken any steps to secure or lock down our API. Of course 
 Let's deploy our UI service. As before, go to the container command prompt and run:
 
 ```sh
-# cd work/system/ui-service
-# npm install
-# serverless deploy
+cd work/system/ui-service
+npm install
+serverless deploy
 ```
 
 Once the deployment has completed you should see some output similar to the following:

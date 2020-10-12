@@ -30,14 +30,14 @@ If you don't already have docker installed then you will need to set it up. Plat
 We have published the container to docker hub, the quickest way to get the container is to run:
 
 ```sh
-$ docker pull pelger/aiasaservice
+docker pull pelger/aiasaservice
 ```
 
 This will fetch the container from Docker Hub. Alternatively, the container can be built from source as follows:
 
 ```sh
-$ cd container
-$ docker build -t aiasaservice .
+cd container
+docker build -t aiasaservice .
 ```
 
 It is usually quicker to pull the container than to build it!
@@ -70,15 +70,15 @@ For example: `elgerfourtheoremoctober122020`
 We have provided a run script for the container. To start the container:
 
 ```sh
-$ cd container
-$ ./run.sh
+cd container
+./run.sh
 ```
 
 On windows:
 
 ```cmd
-c:> cd container
-c:> run.cmd
+cd container
+run.cmd
 ```
 
 This will run the container and give you a command prompt inside the container. You should see output similar to the following:
@@ -106,7 +106,7 @@ If you see an error message that the bucket name is already taken then you shoul
 To confirm that your container is correctly configured run the following from the command prompt
 
 ```sh
-# aws s3 ls s3://
+aws s3 ls s3://
 ```
 
 This should return a list of all of the buckets on the configured account.
@@ -136,16 +136,16 @@ Bucket name wibblefish is already taken, you will need to choose another bucket 
 This means that the bucket name that you chose for this workshop is already taken. You will need to pick another bucket name. To make this easy we have provided a script in the container called `checkbucket.sh` you can use it as follows:
 
 ```sh
-# cd /home/dev
-# ./checkbucket <YOUR BUCKET NAME>
+cd /home/dev
+./checkbucket <YOUR BUCKET NAME>
 ```
 
 Keep trying bucket names until you find one that is available. Once you do you will need to re-configure and restart the container. To exit the container and remove it run:
 
 ```sh
-# exit
-$ docker kill workshop
-$ docker rm workshop
+exit
+docker kill workshop
+docker rm workshop
 ```
 
 Next edit the file `run.env` to supply your new bucket name and start the container again as described above.

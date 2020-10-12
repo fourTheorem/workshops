@@ -112,9 +112,9 @@ When an SQS message is dispatched to this Lambda function, the code extracts and
 Let's go ahead and deploy the crawler service. Go to the shell prompt in your container and run:
 
 ```sh
-$ cd work/system/crawler-service
-$ npm install
-$ serverless deploy
+cd work/system/crawler-service
+npm install
+serverless deploy
 ```
 
 The `npm install` command installed the required dependencies for our function such as the AWS SDK. These are defined in the file `package.json`.

@@ -15,7 +15,7 @@ We have provided a container for running this workshop so that everyone can have
 Get the container by running this command:
 
 ```sh
-$ docker pull pelger/aiasaservice
+docker pull pelger/aiasaservice
 ```
 
 ## AWS Access Keys
