@@ -80,8 +80,7 @@ On windows:
 cd container
 run.bat
 ```
-
-This will run the container and give you a command prompt inside the container. You should see output similar to the following:
+This will run the container - it will take around 10 seconds to start up - and give you a command prompt _INSIDE_ the container. You should see output similar to the following:
 
 ```sh
 .
