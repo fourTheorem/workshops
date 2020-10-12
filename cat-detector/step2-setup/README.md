@@ -78,7 +78,7 @@ On windows:
 
 ```cmd
 cd container
-run.cmd
+run.bat
 ```
 
 This will run the container and give you a command prompt inside the container. You should see output similar to the following:

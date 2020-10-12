@@ -1,11 +1,9 @@
 /* globals $:false imageListItemTpl:false imageListTpl:false WordCloud:false Chart:false */
 'use strict'
 
-// const BUCKET_ROOT = '<YOUR BUCKET URL>' // of the form https://s3-eu-west-1.amazonaws.com/<YOUR BUCKET NAME>
-// const API_ROOT = 'https://<YOUR API GW ID>.execute-api.eu-west-1.amazonaws.com/api/'
+const BUCKET_ROOT = 'https://s3-eu-west-1.amazonaws.com/<YOUR BUCKET NAME>'
+const API_ROOT = 'https://<YOUR API GATEWAY HOSTNAME>/dev/'
 // browse to 'https://<YOUR BUCKET NAME>.s3.amazonaws.com/index.html'
-const BUCKET_ROOT = 'https://s3-eu-west-1.amazonaws.com/elgerfourtheoremoctober122020'
-const API_ROOT = 'https://tkv7wa9hj4.execute-api.eu-west-1.amazonaws.com/dev/'
 
 
 function displayableUrl (url) {
